@@ -1,0 +1,95 @@
+Build a clean, modern developer portfolio and resume website for me.
+
+Personal Info:
+Name: Bharathi N
+
+Title: Software Engineer
+
+Location: Chennai, India
+
+Phone: +91 8489686346
+
+Email: bharathinb14@gmail.com
+
+LinkedIn: https://linkedin.com/in/bharathinb (or just mention "Bharathi NB")
+
+About Me Section:
+Full-stack developer with 3+ years of experience building high-performance web and mobile applications. Skilled in React.js, React Native, Node.js, and Firebase. Experienced in CI/CD, Agile methodology, and developing scalable app architectures.
+
+Skills Section:
+Frontend: React.js, React Native, HTML, CSS, JavaScript
+
+Backend: Node.js, Express.js, Firebase
+
+Database: MongoDB, PostgreSQL
+
+State Management: Redux, Redux Thunk, Redux Saga
+
+DevOps / Tools: Jenkins, Fastlane, Git, GitHub
+
+Project Management: JIRA, Agile (Scrum & Kanban)
+
+Others: REST API, CI/CD, Firebase, MoEngage
+
+Experience Section:
+Software Engineer – Foodhub, Chennai (Sep 2022 – Present)
+
+Developed & maintained mobile apps serving over 1M+ users
+
+Built reusable components and scalable Redux state architecture
+
+Automated app creation tool for internal client onboarding
+
+Integrated Firebase, MoEngage, push notifications
+
+Setup Jenkins + Fastlane for CI/CD pipeline automation
+
+Collaborated closely with UI/UX teams
+
+Junior Software Developer – Sunrise Technologies, Chennai (Oct 2021 – Aug 2022)
+
+Worked on mobile apps in crypto, sports, and social domains
+
+Integrated Web3, Moralis, MetaMask, and TrustWallet
+
+Used Agora for real-time communication
+
+Integrated Firebase, Stripe, REST APIs
+
+Managed front & back-end logic using Node.js and Express
+
+Projects Section (Optional if the builder allows):
+Crypto Escrow App – Built with React Native, Web3, and MetaMask
+
+Athlete Tracker App – Mobile app for athlete management with live video via Agora
+
+Foodhub Internal Tool – No-code platform for onboarding new clients faster
+
+Education:
+Bachelor of Engineering, Karpaga Vinayaga College of Engineering and Technology (2016–2020)
+
+Awards:
+Best Performer of the Quarter – Foodhub
+
+Bonus Increment in 3 Months – Sunrise Technologies
+
+Languages:
+English – Professional
+
+Tamil – Native
+
+Design Preferences:
+Minimal, modern design
+
+Use clean fonts like Inter, Poppins, or Roboto
+
+Highlight sections with icons or clean dividers
+
+Add “Download Resume” button
+
+Make it mobile responsive
+
+Contact Section:
+Include contact form + social links
+
+Option to book meeting / consultation
