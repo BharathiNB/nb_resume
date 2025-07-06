@@ -37,37 +37,54 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  const server = await registerRoutes(app);
+  try {
+    log("Starting server initialization...");
+    const server = await registerRoutes(app);
 
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
+    app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+      const status = err.status || err.statusCode || 500;
+      const message = err.message || "Internal Server Error";
 
-    res.status(status).json({ message });
-    throw err;
-  });
+      log(`Error: ${message}`, "error");
+      res.status(status).json({ message });
+    });
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
-    await setupVite(app, server);
-  } else {
-    serveStatic(app);
-  }
-
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = 5000;
-  server.listen(
-    {
-      port,
-      host: app.get("env") !== "development" ? "127.0.0.1" : "0.0.0.0",
-      reusePort: true,
-    },
-    () => {
-      log(`serving on port ${port}`);
+    // importantly only setup vite in development and after
+    // setting up all the other routes so the catch-all route
+    // doesn't interfere with the other routes
+    if (app.get("env") === "development") {
+      log("Setting up Vite for development...");
+      await setupVite(app, server);
+    } else {
+      log("Setting up static file serving for production...");
+      serveStatic(app);
     }
-  );
+
+    // ALWAYS serve the app on port 5000
+    // this serves both the API and the client.
+    // It is the only port that is not firewalled.
+    const port = process.env.PORT || 5000;
+    const host = app.get("env") !== "development" ? "0.0.0.0" : "0.0.0.0";
+    
+    log(`Attempting to start server on ${host}:${port}...`);
+    server.listen(
+      {
+        port: parseInt(port.toString()),
+        host,
+      },
+      () => {
+        log(`✅ Server successfully started on port ${port}`);
+        log(`Environment: ${app.get("env")}`);
+      }
+    );
+
+    server.on("error", (error) => {
+      log(`❌ Server error: ${error.message}`, "error");
+      process.exit(1);
+    });
+
+  } catch (error) {
+    log(`❌ Failed to start server: ${error}`, "error");
+    process.exit(1);
+  }
 })();
